@@ -24,7 +24,7 @@ class Page extends StatelessWidget {
     return new Container(
       padding: const EdgeInsets.all(8.0),
       width: double.infinity,
-      decoration: new BoxDecoration(
+      /*decoration: new BoxDecoration(
               gradient: new LinearGradient(
                   colors: [
                     Color(0xFFFF9933),
@@ -34,8 +34,8 @@ class Page extends StatelessWidget {
                   end: const FractionalOffset(1.0, 1.0),
                   stops: [0.0, 1.0],
                   ),
-            ),
-      //color: pageViewModel.pageColor,
+            ),*/
+      color: pageViewModel.pageColor,
       child: new Opacity(
         //Opacity is used to create fade in effect
         opacity: percentVisible,
