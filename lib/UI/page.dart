@@ -131,7 +131,7 @@ class _BodyPageTransform extends StatelessWidget {
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: new Padding(
         padding: const EdgeInsets.only(
-          bottom: 75.0,
+          bottom: 100.0,
           left: 10.0,
           right: 10.0,
         ),
@@ -196,7 +196,7 @@ class _TitlePageTransform extends StatelessWidget {
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: new Padding(
         padding: new EdgeInsets.only(
-          top: 5.0,
+          top: 15.0,
           bottom: 5.0,
           left: 10.0,
           right: 10.0,
