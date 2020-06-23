@@ -70,7 +70,7 @@ class Page extends StatelessWidget {
           ),
         ), //Transform
         Flexible(
-          flex: 2,
+          flex: 3,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
@@ -108,7 +108,7 @@ class Page extends StatelessWidget {
                 ),
               ), //Transform
               Expanded(
-                flex: 4,
+                flex: 3,
                 child: new _BodyPageTransform(
                   percentVisible: percentVisible,
                   pageViewModel: pageViewModel,
