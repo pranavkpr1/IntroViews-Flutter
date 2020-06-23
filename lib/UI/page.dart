@@ -70,7 +70,7 @@ class Page extends StatelessWidget {
           ),
         ), //Transform
         Flexible(
-          flex: 3,
+          flex: 4,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
@@ -108,7 +108,7 @@ class Page extends StatelessWidget {
                 ),
               ), //Transform
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: new _BodyPageTransform(
                   percentVisible: percentVisible,
                   pageViewModel: pageViewModel,
@@ -142,7 +142,7 @@ class _BodyPageTransform extends StatelessWidget {
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: new Padding(
         padding: const EdgeInsets.only(
-          bottom: 125.0,
+          bottom: 120.0,
           left: 10.0,
           right: 10.0,
         ),
@@ -207,7 +207,7 @@ class _TitlePageTransform extends StatelessWidget {
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: new Padding(
         padding: new EdgeInsets.only(
-          top: 15.0,
+          top: 25.0,
           bottom: 5.0,
           left: 10.0,
           right: 10.0,
