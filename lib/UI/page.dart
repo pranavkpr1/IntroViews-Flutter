@@ -168,7 +168,7 @@ class _ImagePageTransform extends StatelessWidget {
       child: new Padding(
         padding: new EdgeInsets.only(
           top: 20.0,
-          bottom: 40.0,
+          bottom: 20.0,
         ),
         child: new Container(
           child: pageViewModel.mainImage, //Loading main
