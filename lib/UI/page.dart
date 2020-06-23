@@ -16,7 +16,7 @@ class Page extends StatelessWidget {
   Page({
     this.pageViewModel,
     this.percentVisible = 1.0,
-    this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
+    this.columnMainAxisAlignment = MainAxisAlignment.spaceBetween,
   });
 
   @override
