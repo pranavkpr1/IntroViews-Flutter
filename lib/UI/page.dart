@@ -24,17 +24,6 @@ class Page extends StatelessWidget {
     return new Container(
       padding: const EdgeInsets.all(8.0),
       width: double.infinity,
-      /*decoration: new BoxDecoration(
-              gradient: new LinearGradient(
-                  colors: [
-                    Color(0xFFFF9933),
-                    Color(0xFFF27718)
-                  ],
-                  begin: const FractionalOffset(0.0, 0.0),
-                  end: const FractionalOffset(1.0, 1.0),
-                  stops: [0.0, 1.0],
-                  ),
-            ),*/
       color: pageViewModel.pageColor,
       child: new Opacity(
         //Opacity is used to create fade in effect
@@ -56,12 +45,14 @@ class Page extends StatelessWidget {
       mainAxisAlignment: columnMainAxisAlignment,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        SafeArea(
+        Expanded(
+                flex: 2,
+        child:SafeArea(
           child: new _TitlePageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
           ),
-        ), //Transform
+        )), //Transform
         Expanded(
           flex: 4,
           child: new _ImagePageTransform(
@@ -69,8 +60,8 @@ class Page extends StatelessWidget {
             pageViewModel: pageViewModel,
           ),
         ), //Transform
-        Flexible(
-          flex: 4,
+        Exapanded(
+          flex: 6,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
