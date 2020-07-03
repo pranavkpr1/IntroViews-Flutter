@@ -86,7 +86,7 @@ class IntroViewsFlutter extends StatefulWidget {
   /// portrait view wraps around  [title] [body] [mainImage]
   ///
   /// landscape view wraps around [title] [body]
-  final MainAxisAlignment columnMainAxisAlignment;
+  //final MainAxisAlignment columnMainAxisAlignment;
 
   /// ajust how how much the user most drag for a full page transition
   ///
@@ -114,7 +114,7 @@ class IntroViewsFlutter extends StatefulWidget {
     this.skipText = const Text("SKIP"),
     this.backText = const Text("BACK"),
     this.doneButtonPersist = false,
-    this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
+    //this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
     this.fullTransition = FULL_TARNSITION_PX,
     this.background,
   }) : super(key: key);
@@ -241,7 +241,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
           IntoUIPage.Page(
             pageViewModel: pages[activePageIndex],
             percentVisible: 1.0,
-            columnMainAxisAlignment: widget.columnMainAxisAlignment,
+            //columnMainAxisAlignment: widget.columnMainAxisAlignment,
           ), //Pages
           PageReveal(
             //next page reveal
@@ -249,7 +249,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
             child: IntoUIPage.Page(
                 pageViewModel: pages[nextPageIndex],
                 percentVisible: slidePercent,
-                columnMainAxisAlignment: widget.columnMainAxisAlignment),
+                //columnMainAxisAlignment: widget.columnMainAxisAlignment),
           ), //PageReveal
 
           PagerIndicator(
