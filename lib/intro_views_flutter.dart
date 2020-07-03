@@ -249,7 +249,8 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
             child: IntoUIPage.Page(
                 pageViewModel: pages[nextPageIndex],
                 percentVisible: slidePercent,
-                //columnMainAxisAlignment: widget.columnMainAxisAlignment),
+                //columnMainAxisAlignment: widget.columnMainAxisAlignment
+            ),
           ), //PageReveal
 
           PagerIndicator(
