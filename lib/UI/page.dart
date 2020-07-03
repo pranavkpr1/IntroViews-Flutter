@@ -10,13 +10,13 @@ class Page extends StatelessWidget {
   final double percentVisible;
 
   /// [MainAxisAligment]
-  final MainAxisAlignment columnMainAxisAlignment;
+  //final MainAxisAlignment columnMainAxisAlignment;
 
   //Constructor
   Page({
     this.pageViewModel,
     this.percentVisible = 1.0,
-    this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
+    //this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
   });
 
   @override
@@ -42,9 +42,10 @@ class Page extends StatelessWidget {
   Widget _buildPortraitPage() {
     return new Column(
       key: Key("Portrait Page"),
-      mainAxisAlignment: columnMainAxisAlignment,
+      //mainAxisAlignment: columnMainAxisAlignment,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
+        SizedBox(height:10),
         Expanded(
                 flex: 2,
         child:SafeArea(
@@ -52,7 +53,8 @@ class Page extends StatelessWidget {
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
           ),
-        )), //Transform
+        )),//Transform
+        SizedBox(height:25),
         Expanded(
           flex: 4,
           child: new _ImagePageTransform(
@@ -60,8 +62,9 @@ class Page extends StatelessWidget {
             pageViewModel: pageViewModel,
           ),
         ), //Transform
+        SizedBox(height:25),
         Exapanded(
-          flex: 6,
+          flex: 4,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
