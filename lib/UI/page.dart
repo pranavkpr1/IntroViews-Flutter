@@ -63,7 +63,7 @@ class Page extends StatelessWidget {
           ),
         ), //Transform
         SizedBox(height:25),
-        Exapanded(
+        Expanded(
           flex: 4,
           child: new _BodyPageTransform(
             percentVisible: percentVisible,
@@ -89,7 +89,7 @@ class Page extends StatelessWidget {
 
         new Flexible(
           child: new Column(
-            mainAxisAlignment: columnMainAxisAlignment,
+           // mainAxisAlignment: columnMainAxisAlignment,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Expanded(
