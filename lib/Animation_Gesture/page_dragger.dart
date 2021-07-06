@@ -9,14 +9,14 @@ import 'package:intro_views_flutter/Models/slide_update_model.dart';
 class PageDragger extends StatefulWidget {
   //These bool variables are used to check whether user can drag left or right or none.
   final bool canDragLeftToRight;
-  final bool canDragRightToLeft;
+  final bool? canDragRightToLeft;
   final double fullTransitionPX;
   //Stream controller
-  final StreamController<SlideUpdate> slideUpdateStream;
+  final StreamController<SlideUpdate>? slideUpdateStream;
 
   //Constructor
   PageDragger({
-    this.canDragLeftToRight,
+    required this.canDragLeftToRight,
     this.canDragRightToLeft,
     this.slideUpdateStream,
     this.fullTransitionPX = FULL_TARNSITION_PX,
@@ -28,8 +28,8 @@ class PageDragger extends StatefulWidget {
 
 class _PageDraggerState extends State<PageDragger> {
   //Variables
-  Offset dragStart;
-  SlideDirection slideDirection;
+  late Offset dragStart;
+  late SlideDirection slideDirection;
   double slidePercent = 0.0;
 
   // This methods executes when user starts dragging.
@@ -46,7 +46,7 @@ class _PageDraggerState extends State<PageDragger> {
       final dx = dragStart.dx - newPosition.dx;
 
       //predicting slide direction
-      if (dx > 0.0 && widget.canDragRightToLeft) {
+      if (dx > 0.0 && widget.canDragRightToLeft!) {
         slideDirection = SlideDirection.rightToLeft;
       } else if (dx < 0.0 && widget.canDragLeftToRight) {
         slideDirection = SlideDirection.leftToRight;
@@ -63,7 +63,7 @@ class _PageDraggerState extends State<PageDragger> {
       }
 
       // Adding to slideUpdateStream
-      widget.slideUpdateStream
+      widget.slideUpdateStream!
           .add(SlideUpdate(slideDirection, slidePercent, UpdateType.dragging));
     }
   }
@@ -71,11 +71,11 @@ class _PageDraggerState extends State<PageDragger> {
   // This method executes when user ends dragging.
   onDragEnd(DragEndDetails details) {
     // Adding to slideUpdateStream
-    widget.slideUpdateStream.add(SlideUpdate(
+    widget.slideUpdateStream!.add(SlideUpdate(
         SlideDirection.none, slidePercent, UpdateType.doneDragging));
 
     //Making dragStart to null for the reallocation
-    dragStart = null;
+    dragStart;
   }
 
   @override

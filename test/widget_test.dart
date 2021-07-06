@@ -123,8 +123,8 @@ void main() {
   });
 
   testWidgets('should open app in portrait mode', (WidgetTester tester) async {
-    final TestWidgetsFlutterBinding binding =
-        TestWidgetsFlutterBinding.ensureInitialized();
+    final binding = TestWidgetsFlutterBinding.ensureInitialized()
+        as TestWidgetsFlutterBinding;
     binding.window.physicalSizeTestValue =
         (Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT));
     // Build our app and trigger a frame in portrait mode.

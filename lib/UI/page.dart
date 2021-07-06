@@ -4,10 +4,10 @@ import 'package:intro_views_flutter/Models/page_view_model.dart';
 /// This is the class which contains the Page UI.
 class Page extends StatelessWidget {
   ///page details
-  final PageViewModel pageViewModel;
+  final PageViewModel? pageViewModel;
 
   ///percent visible of page
-  final double percentVisible;
+  final double? percentVisible;
 
   /// [MainAxisAligment]
   //final MainAxisAlignment columnMainAxisAlignment;
@@ -24,10 +24,10 @@ class Page extends StatelessWidget {
     return new Container(
       padding: const EdgeInsets.all(8.0),
       width: double.infinity,
-      color: pageViewModel.pageColor,
+      color: pageViewModel!.pageColor,
       child: new Opacity(
         //Opacity is used to create fade in effect
-        opacity: percentVisible,
+        opacity: percentVisible!,
         child: new OrientationBuilder(
             builder: (BuildContext context, Orientation orientation) {
           return orientation == Orientation.portrait
@@ -45,29 +45,29 @@ class Page extends StatelessWidget {
       //mainAxisAlignment: columnMainAxisAlignment,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        SizedBox(height:10),
+        SizedBox(height: 10),
         Expanded(
-                flex: 2,
-        child:SafeArea(
-          child: new _TitlePageTransform(
-            percentVisible: percentVisible,
-            pageViewModel: pageViewModel,
-          ),
-        )),//Transform
-        SizedBox(height:25),
+            flex: 2,
+            child: SafeArea(
+              child: new _TitlePageTransform(
+                percentVisible: percentVisible!,
+                pageViewModel: pageViewModel!,
+              ),
+            )), //Transform
+        SizedBox(height: 25),
         Expanded(
           flex: 4,
           child: new _ImagePageTransform(
-            percentVisible: percentVisible,
-            pageViewModel: pageViewModel,
+            percentVisible: percentVisible!,
+            pageViewModel: pageViewModel!,
           ),
         ), //Transform
-        SizedBox(height:25),
+        SizedBox(height: 25),
         Expanded(
           flex: 4,
           child: new _BodyPageTransform(
-            percentVisible: percentVisible,
-            pageViewModel: pageViewModel,
+            percentVisible: percentVisible!,
+            pageViewModel: pageViewModel!,
           ),
         ), //Transform
       ],
@@ -82,30 +82,30 @@ class Page extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: new _ImagePageTransform(
-            percentVisible: percentVisible,
-            pageViewModel: pageViewModel,
+            percentVisible: percentVisible!,
+            pageViewModel: pageViewModel!,
           ),
         ), //Transform
 
         new Flexible(
           child: new Column(
-           // mainAxisAlignment: columnMainAxisAlignment,
+            // mainAxisAlignment: columnMainAxisAlignment,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Expanded(
                 flex: 2,
                 child: SafeArea(
                   child: new _TitlePageTransform(
-                    percentVisible: percentVisible,
-                    pageViewModel: pageViewModel,
+                    percentVisible: percentVisible!,
+                    pageViewModel: pageViewModel!,
                   ),
                 ),
               ), //Transform
               Expanded(
                 flex: 2,
                 child: new _BodyPageTransform(
-                  percentVisible: percentVisible,
-                  pageViewModel: pageViewModel,
+                  percentVisible: percentVisible!,
+                  pageViewModel: pageViewModel!,
                 ),
               ), //Transform
             ],
@@ -123,9 +123,9 @@ class _BodyPageTransform extends StatelessWidget {
   final PageViewModel pageViewModel;
 
   const _BodyPageTransform({
-    Key key,
-    @required this.percentVisible,
-    @required this.pageViewModel,
+    Key? key,
+    required this.percentVisible,
+    required this.pageViewModel,
   }) : super(key: key);
 
   @override
@@ -143,7 +143,7 @@ class _BodyPageTransform extends StatelessWidget {
         child: DefaultTextStyle.merge(
           style: pageViewModel.mergedBodyTextStyle,
           textAlign: TextAlign.center,
-          child: pageViewModel.body,
+          child: pageViewModel.body!,
         ),
       ), //Padding
     );
@@ -157,9 +157,9 @@ class _ImagePageTransform extends StatelessWidget {
   final PageViewModel pageViewModel;
 
   const _ImagePageTransform({
-    Key key,
-    @required this.percentVisible,
-    @required this.pageViewModel,
+    Key? key,
+    required this.percentVisible,
+    required this.pageViewModel,
   }) : super(key: key);
 
   @override
@@ -188,9 +188,9 @@ class _TitlePageTransform extends StatelessWidget {
   final PageViewModel pageViewModel;
 
   const _TitlePageTransform({
-    Key key,
-    @required this.percentVisible,
-    @required this.pageViewModel,
+    Key? key,
+    required this.percentVisible,
+    required this.pageViewModel,
   }) : super(key: key);
 
   @override
@@ -208,7 +208,7 @@ class _TitlePageTransform extends StatelessWidget {
         ),
         child: DefaultTextStyle.merge(
           style: pageViewModel.mergedTitleTextStyle,
-          child: pageViewModel.title,
+          child: pageViewModel.title!,
         ),
       ), //Padding
     );
