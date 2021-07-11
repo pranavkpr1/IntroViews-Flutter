@@ -17,5 +17,5 @@ class PageBubbleViewModel {
     required this.isHollow,
     required this.activePercent,
     this.bubbleBackgroundColor = const Color(0x88FFFFFF),
-  }) : assert(bubbleBackgroundColor != null);
+  }) : assert(bubbleBackgroundColor.toString().isNotEmpty);
 }

@@ -20,7 +20,7 @@ class PageDragger extends StatefulWidget {
     this.canDragRightToLeft,
     this.slideUpdateStream,
     this.fullTransitionPX = FULL_TARNSITION_PX,
-  }) : assert(fullTransitionPX != null);
+  }) : assert(fullTransitionPX.isFinite);
 
   @override
   _PageDraggerState createState() => _PageDraggerState();
@@ -39,7 +39,7 @@ class _PageDraggerState extends State<PageDragger> {
 
   // This methods executes while user is dragging.
   onDragUpdate(DragUpdateDetails details) {
-    if (dragStart != null) {
+    if (dragStart.isFinite) {
       //Getting new position details
       final newPosition = details.globalPosition;
       //Change in position in x

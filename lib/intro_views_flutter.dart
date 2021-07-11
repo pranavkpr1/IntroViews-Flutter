@@ -128,11 +128,11 @@ class IntroViewsFlutter extends StatefulWidget {
 
 class _IntroViewsFlutterState extends State<IntroViewsFlutter>
     with TickerProviderStateMixin {
-  late StreamController<SlideUpdate>
+  StreamController<SlideUpdate>?
       // ignore: close_sinks
       slideUpdateStream; //Stream controller is used to get all the updates when user slides across screen.
 
-  late AnimatedPageDragger
+  AnimatedPageDragger?
       animatedPageDragger; //When user stops dragging then by using this page automatically drags.
 
   int activePageIndex = 0; //active page index
@@ -146,7 +146,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
     //Stream Controller initialization
     slideUpdateStream = StreamController<SlideUpdate>();
     //listening to updates of stream controller
-    slideUpdateStream$ = slideUpdateStream.stream.listen((SlideUpdate event) {
+    slideUpdateStream$ = slideUpdateStream!.stream.listen((SlideUpdate event) {
       setState(() {
         //setState is used to change the values dynamically
 
@@ -189,7 +189,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
             nextPageIndex = activePageIndex;
           }
           //Run the animation
-          animatedPageDragger.run();
+          animatedPageDragger!.run();
         }
         //when animating
         else if (event.updateType == UpdateType.animating) {
@@ -215,8 +215,8 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
   @override
   void dispose() {
     slideUpdateStream$.cancel();
-    animatedPageDragger.dispose();
-    slideUpdateStream.close();
+    animatedPageDragger!.dispose();
+    slideUpdateStream!.close();
     super.dispose();
   }
 
