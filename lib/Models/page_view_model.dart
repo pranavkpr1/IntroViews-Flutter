@@ -7,15 +7,15 @@ class PageViewModel {
   final Color? pageColor;
 
   ///icon image path
-  final String? iconImageAssetPath;
+  String? iconImageAssetPath;
 
   /// iconColor
-  final Color? iconColor;
+  Color? iconColor;
 
   /// color for background of progress bubbles
   ///
   /// @Default `const Color(0x88FFFFFF)`
-  final Color? bubbleBackgroundColor;
+  final Color bubbleBackgroundColor;
 
   /// widget for the title
   ///
@@ -50,7 +50,7 @@ class PageViewModel {
   /// _typicaly a Image Widget_
   ///
   /// gets overriden by [iconImageAssetPath]
-  final Widget? bubble;
+  Widget? bubble;
 
   PageViewModel(
       {this.pageColor,

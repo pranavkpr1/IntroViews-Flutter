@@ -45,11 +45,11 @@ class PageBubble extends StatelessWidget {
             ), //BoxDecoration
             child: Opacity(
               opacity: viewModel!.activePercent,
-              child: (viewModel!.iconAssetPath.isNotEmpty &&
+              child: (viewModel!.iconAssetPath!.isNotEmpty &&
                       viewModel!.iconAssetPath != "")
                   // ignore: conflicting_dart_import
                   ? Image.asset(
-                      viewModel!.iconAssetPath,
+                      viewModel!.iconAssetPath!,
                       color: viewModel!.iconColor,
                     )
                   : viewModel!.bubbleInner.toString().isNotEmpty
