@@ -132,7 +132,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
       // ignore: close_sinks
       slideUpdateStream; //Stream controller is used to get all the updates when user slides across screen.
 
-  late AnimatedPageDragger
+   AnimatedPageDragger?
       animatedPageDragger; //When user stops dragging then by using this page automatically drags.
 
   int activePageIndex = 0; //active page index
@@ -189,7 +189,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
             nextPageIndex = activePageIndex;
           }
           //Run the animation
-          animatedPageDragger.run();
+          animatedPageDragger?.run();
         }
         //when animating
         else if (event.updateType == UpdateType.animating) {
@@ -215,7 +215,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
   @override
   void dispose() {
     slideUpdateStream$.cancel();
-    animatedPageDragger.dispose();
+    animatedPageDragger?.dispose();
     slideUpdateStream!.close();
     super.dispose();
   }
