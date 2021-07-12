@@ -11,9 +11,9 @@ class PageBubbleViewModel {
   final Widget? bubbleInner;
 
   PageBubbleViewModel({
-    this.bubbleInner!,
-   this.iconAssetPath!,
-     this.iconColor!,
+   required this.bubbleInner,
+  required this.iconAssetPath,
+    required this.iconColor,
     required this.isHollow,
     required this.activePercent,
     this.bubbleBackgroundColor = const Color(0x88FFFFFF),
